@@ -3,7 +3,7 @@ on:
   push:
   # 이벤트를 감지할 브랜치
     branches:
-      - reference
+      - main
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -34,6 +34,6 @@ jobs:
         run: |
           aws s3 sync \
             --region ap-northeast-2 \
-            build s3://My-Bucket-Name \ # 빌드 폴더 이름 s3 ://버킷이름
+            build s3://fe-99-jeongminsang-s3 \ # 빌드 폴더 이름 s3 ://버킷이름
             --delete
         working-directory: ./my-agora-states-client
